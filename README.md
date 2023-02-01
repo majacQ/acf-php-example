@@ -1,12 +1,21 @@
+
+## This repo is archived because it's no longer necessary/relevant now that [ACF Pro supports installing via `composer`](https://www.advancedcustomfields.com/resources/installing-acf-pro-with-composer/). Don't forget to [configure Dependabot with the private registry credentials](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#composer-repository).
+
+-----
+#### Original Readme:
+
 If your project depends on the Advanced Custom Fields plugin, Dependabot won't be able to download it via the usual mechanisms that rely on the presence of an `ACF_PRO_KEY` environment variable (e.g., https://github.com/pivvenit/acf-composer-bridge).
 
-Instead, if you're working in a **private** repository, we recommend vendoring your **licensed** copy of the Advanced Custom Fields plugin in your repository. This branch illustrates this approach.
+You have two options:
+1. Use a private composer registry. ACF doesn't currently offer a private registry, but there is [an open source script that proxies private composer registry requests from Dependabot to ACF](https://github.com/pivvenit/acf-pro-installer/issues/222#issuecomment-890359373). 
+    
+    **WARNING: If you use a proxy that you don't host, then your license key will be viewable by whoever operates that proxy.**
 
-### Caveats
+2. Vendor a **licensed** copy of the ACF plugin in your **private** repository. This repository illustrates this approach. 
 
-First some caveats:
+Caveats:
 
-- By using this approach, Dependabot will be able to update the rest of your composer project's dependencies. However, to update your Advanced Custom Fields plugin, you'll need to manually [download a zip file](https://wordpress.org/plugins/advanced-custom-fields/) with the desired version and commit the contents to your repository.
+- Using this approach enables Dependabot to update the rest of your composer project's dependencies. However, updating your Advanced Custom Fields plugin will require manually [downloading a zip file](https://wordpress.org/plugins/advanced-custom-fields/) with the desired version and committing the contents to your repository.
 - This is not legal advice. If you're concerned about the legality of committing the contents of the Advanced Custom Fields plugin in your private repository, please consult your legal counsel.
 
 ### Set up
