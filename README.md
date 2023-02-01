@@ -1,3 +1,9 @@
+
+## This repo is archived because it's no longer necessary/relevant now that [ACF Pro supports installing via `composer`](https://www.advancedcustomfields.com/resources/installing-acf-pro-with-composer/). Don't forget to [configure Dependabot with the private registry credentials](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#composer-repository).
+
+-----
+#### Original Readme:
+
 If your project depends on the Advanced Custom Fields plugin, Dependabot won't be able to download it via the usual mechanisms that rely on the presence of an `ACF_PRO_KEY` environment variable (e.g., https://github.com/pivvenit/acf-composer-bridge).
 
 You have two options:
